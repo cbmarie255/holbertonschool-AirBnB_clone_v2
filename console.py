@@ -116,7 +116,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """ Create an object of any class"""
-        parameters = args.split(" ")
+        parameters = args.split(' ')
         if not args:
             print("** class name missing **")
             return
@@ -126,7 +126,7 @@ class HBNBCommand(cmd.Cmd):
         new_instance = HBNBCommand.classes[parameters[0]]()
         parameters_dict = {}
         for item in parameters[1:]:
-            attribute = item.split("=")
+            attribute = item.split('=')
             parameters_dict[item[0]] = item[2].replace('"', '').replace('_', ' ')
         new_instance.__dict__.update(**parameters_dict)
         storage.save()
