@@ -127,7 +127,7 @@ class HBNBCommand(cmd.Cmd):
         parameters_dict = {}
         for item in parameters[1:]:
             attribute = item.split('=')
-            parameters_dict[item[0]] = item[2].replace('"', '').replace('_', ' ')
+            parameters_dict[item[0]] = item[2].replace('"', '\\').replace('_', ' ')
         new_instance.__dict__.update(**parameters_dict)
         storage.save()
         print(new_instance.id)
