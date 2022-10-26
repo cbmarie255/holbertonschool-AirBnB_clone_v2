@@ -54,3 +54,4 @@ class FileStorage:
         if obj in self.__objects.values():
             obj_dict = "{}.{}".format(type(obj).__name__, obj.id)
             del(self.__objects[obj_dict])
+        return
