@@ -124,12 +124,14 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         new_instance = HBNBCommand.classes[parameters[0]]()
-        parameters_dict = {}
         for item in parameters[1:]:
-            attribute = item.partition("=")
-            parameters_dict[item[0]] = item[2].replace('"', '').replace('_', ' ')
-        new_instance.__dict__.update(**parameters_dict)
-        storage.save()
+            attribute = item.split("=")[1].replace('"', '').replace("_", " ")
+            try:
+                attribute = eval(attribute)
+            except Exception:
+                pass
+            setattr(new_instance, item.split("=")[0], attribute)
+        new_instance.save()
         print(new_instance.id)
         storage.save()
 
