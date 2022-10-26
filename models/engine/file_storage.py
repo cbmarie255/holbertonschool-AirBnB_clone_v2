@@ -54,6 +54,6 @@ class FileStorage:
         if obj:
             key = obj.to_dict()['__class__'] + '.' + obj.id
             try:
-                del self.__objects[key]
+                del FileStorage.__objects[key]
             except Exception:
                 return
