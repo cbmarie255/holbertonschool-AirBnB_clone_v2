@@ -6,6 +6,7 @@ import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from models import storage
 
+
 Base = declarative_base()
 
 
