@@ -41,7 +41,7 @@ def route_for_ints(n=None):
         return '{} is a number'.format(n)
 
 
-@app.route('/number_template/<int:n>', strict_slashes=False)
+@app.route('/number_template/<int:n>')
 def route_for_number_template(n):
     '''Feeding a string to return as a response.'''
     if type(n) is int:
