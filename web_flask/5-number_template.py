@@ -3,6 +3,7 @@
     A script that starts a Flask web application with parameters.
 """
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
