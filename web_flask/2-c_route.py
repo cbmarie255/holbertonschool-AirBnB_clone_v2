@@ -19,7 +19,7 @@ def route_dos():
     return 'HBNB'
 
 
-@app.route('/c/{}'.format(text), strict_slashes=False)
+@app.route('/c/<string:text>', strict_slashes=False)
 def route_tree(text=None):
     '''Feeding a string to return as a response.'''
     return 'C {}'.format(text.replace('_', ' '))
