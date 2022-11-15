@@ -5,6 +5,7 @@
 from flask import Flask
 from flask import render_template
 
+
 app = Flask(__name__)
 
 
@@ -40,7 +41,7 @@ def route_for_ints(n=None):
         return '{} is a number'.format(n)
 
 
-@app.route('/number_template/int:n>', strict_slashes=False)
+@app.route('/number_template/<int:n>', strict_slashes=False)
 def route_for_number_template(n=None):
     '''Feeding a string to return as a response.'''
     if type(n) is int:
