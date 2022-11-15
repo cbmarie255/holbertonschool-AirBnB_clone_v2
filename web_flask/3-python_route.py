@@ -26,7 +26,7 @@ def route_for_c(text=None):
 
 
 @app.route('/python/<string:text>', strict_slashes=False)
-def route_for_python(text='is_cool'):
+def route_for_python(text='is cool'):
     '''Feeding a string to return as a response.'''
     return 'Python {}'.format(text.replace('_', ' '))
 
